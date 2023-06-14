@@ -1,9 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
-  imports: [CommonModule],
+  selector: 'src-button',
   template: ` <button
     type="button"
     (click)="onClick.emit($event)"
@@ -12,12 +10,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   >
     {{ label }}
   </button>`,
-  styleUrls: ['./button.css'],
+  styleUrls: ['./source-button.component.scss'],
 })
-export default class ButtonComponent {
+export class SourceButtonComponent {
   /**
-   * Is this the principal call to action on the page?
-   */
+    * Is this the principal call to action on the page?
+    */
   @Input()
   primary = false;
 
@@ -38,8 +36,7 @@ export default class ButtonComponent {
    *
    * @required
    */
-  @Input()
-  label = 'Button';
+  @Input() label = 'Button';
 
   /**
    * Optional click handler
